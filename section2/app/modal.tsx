@@ -230,6 +230,7 @@ export default function Modal() {
       </View>
     </View>
   );
+
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       Add commentMore actions

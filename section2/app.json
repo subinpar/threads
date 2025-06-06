@@ -7,6 +7,10 @@
     "icon": "./assets/images/icon.png",
     "scheme": "threads",
     "userInterfaceStyle": "automatic",
+    "jsEngine": "jsc",
+    "updates": {
+      "enabled": false
+    },
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
@@ -24,9 +28,7 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "updates": {
-      "enabled": false
-    },
+
     "plugins": [
       "expo-router",
       [
@@ -36,6 +38,12 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow $(PRODUCT_NAME) to use your location."
         }
       ]
     ],

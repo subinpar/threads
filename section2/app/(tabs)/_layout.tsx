@@ -36,6 +36,7 @@ const AnimatedTabBarButton = ({
 
   return (
     <Pressable
+      {...restProps}
       onPress={onPress}
       onPressOut={handlePressOut}
       style={[

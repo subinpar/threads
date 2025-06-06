@@ -39,6 +39,7 @@ export default function Index() {
       }
     >
       <BlurView style={styles.header} intensity={70}>
+        Add commentMore actions
         <Image
           source={require("../../../assets/images/react-logo.png")}
           style={styles.headerLogo}
@@ -46,7 +47,10 @@ export default function Index() {
         {!isLoggedIn && (
           <TouchableOpacity
             style={styles.loginButton}
-            onPress={() => router.navigate("/login")}
+            onPress={() => {
+              console.log("loginButton onPress");
+              router.navigate(`/login`);
+            }}
           >
             <Text style={styles.loginButtonText}>로그인</Text>
           </TouchableOpacity>
@@ -55,14 +59,14 @@ export default function Index() {
       {isLoggedIn && (
         <View style={styles.tabContainer}>
           <View style={styles.tab}>
-            <TouchableOpacity onPress={() => router.replace(`/`)}>
+            <TouchableOpacity onPress={() => router.navigate(`/`)}>
               <Text style={{ color: Pathname === "/" ? "red" : "black" }}>
-                For You
+                For you
               </Text>
             </TouchableOpacity>
           </View>
           <View style={styles.tab}>
-            <TouchableOpacity onPress={() => router.replace(`/following`)}>
+            <TouchableOpacity onPress={() => router.navigate(`/following`)}>
               <Text style={{ color: Pathname === "/" ? "black" : "red" }}>
                 Following
               </Text>
@@ -71,17 +75,17 @@ export default function Index() {
         </View>
       )}
       <View>
-        <TouchableOpacity onPress={() => router.replace(`/@subinpar/post/1`)}>
+        <TouchableOpacity onPress={() => router.push(`/@zerocho/post/1`)}>
           <Text>게시글1</Text>
         </TouchableOpacity>
       </View>
       <View>
-        <TouchableOpacity onPress={() => router.replace(`/@subinpar/post/2`)}>
+        <TouchableOpacity onPress={() => router.replace(`/@zerocho/post/2`)}>
           <Text>게시글2</Text>
         </TouchableOpacity>
       </View>
       <View>
-        <TouchableOpacity onPress={() => router.replace(`/@subinpar/post/3`)}>
+        <TouchableOpacity onPress={() => router.replace(`/@zerocho/post/3`)}>
           <Text>게시글3</Text>
         </TouchableOpacity>
       </View>
@@ -104,7 +108,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headerLogo: {
-    width: 42,
+    width: 42, // DP, DIP
     height: 42,
   },
   loginButton: {
