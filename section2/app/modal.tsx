@@ -151,7 +151,27 @@ export default function Modal() {
       </View>
       <View style={styles.contentContainer}>
         <View style={styles.userInfoContainer}>
-          <Text style={styles.username}>zerohch0</Text>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Text style={styles.username}>zerohch0</Text>
+            <Pressable
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginBottom: 0,
+                marginLeft: 10,
+              }}
+            >
+              <Ionicons
+                name="chevron-forward"
+                size={14}
+                color="gray"
+                style={{ marginRight: 4 }}
+              />
+              <Text style={{ color: "#999", fontSize: 13, fontWeight: "400" }}>
+                Add a topic
+              </Text>
+            </Pressable>
+          </View>
           {index > 0 && (
             <TouchableOpacity
               onPress={() => removeThread(item.id)}
@@ -162,6 +182,7 @@ export default function Modal() {
             </TouchableOpacity>
           )}
         </View>
+
         <TextInput
           style={styles.input}
           placeholder={"What's new?"}
@@ -233,7 +254,6 @@ export default function Modal() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
-      Add commentMore actions
       <View style={styles.header}>
         <Pressable onPress={handleCancel} disabled={isPosting}>
           <Text style={[styles.cancel, isPosting && styles.disabledText]}>
